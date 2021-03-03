@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7712212673719757849}
   - component: {fileID: 7712212673719757854}
   - component: {fileID: 7712212673719757855}
+  - component: {fileID: 1691979741}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -25,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7712212673719757852}
-  m_LocalRotation: {x: 0.17516007, y: -0, z: -0, w: 0.98454005}
+  m_LocalRotation: {x: 0.1751605, y: 0, z: 0, w: 0.9845399}
   m_LocalPosition: {x: 9.55, y: 12.29, z: -16.63}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +84,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7712212673719757852}
   m_Enabled: 1
+--- !u!114 &1691979741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712212673719757852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f792992b81dc1a44b9aab76805b893a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missile: {fileID: 0}
+  centerOfTheMap: {fileID: 0}
+  offset: {x: 0, y: 2.5, z: -10}
+  mapOffset: {x: 0, y: 10, z: -30}
