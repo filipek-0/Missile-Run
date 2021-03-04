@@ -25,6 +25,5 @@ public class MetroMovement : MonoBehaviour
     public void StartMovement()
     {
         startMovement = true;
-        print("YEAH");
     }    
 }
