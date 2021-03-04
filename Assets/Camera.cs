@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public Transform missile;
-    public Transform centerOfTheMap;
-    [SerializeField] Vector3 offset;
-    [SerializeField] Vector3 mapOffset;
+    [SerializeField] Transform missile;
+    [SerializeField] Transform beginningOfTheScene;
+    [SerializeField] Transform endOfTheScene;
     
+    [SerializeField] Vector3 offsetValue;
+    [SerializeField] Vector3 offset;
+
+    [SerializeField] MeshRenderer baseOfTheMissile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +20,31 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-        transform.position = missile.position + offset;
-        transform.LookAt(missile);
-        ShowMap();
+        if(baseOfTheMissile.enabled == true)
+        {
+            transform.position = missile.position + offset;
+            transform.LookAt(missile);
+            ShowMap();
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void ShowMap()
     {
         if (Input.GetKey(KeyCode.Tab))
         {
-            transform.position = centerOfTheMap.position + mapOffset;
-            transform.LookAt(centerOfTheMap);
+            Vector3 centerOftheScene;
+            centerOftheScene = endOfTheScene.position / 2;
+            Vector3 mapOffset;
+            Vector3 offsetConstant = new Vector3();
+            offsetConstant.z = -centerOftheScene.x;
+            mapOffset = offsetConstant + offsetValue;
+            print(mapOffset);
+            transform.position = centerOftheScene + mapOffset;
+            transform.LookAt(centerOftheScene);
         }
     }
 }
