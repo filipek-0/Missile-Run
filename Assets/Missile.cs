@@ -16,8 +16,10 @@ public class Missile : MonoBehaviour
     [SerializeField] ParticleSystem thrustParticle;
     [SerializeField] ParticleSystem explodeParticle;
     [SerializeField] ParticleSystem winParticle;
-    [SerializeField] MeshRenderer baseOfTheMissile;
-    [SerializeField] MeshRenderer coneOfTheMissile;
+    [SerializeField] MeshRenderer bodyOfTheMissileRenderer;
+    [SerializeField] MeshCollider bodyOfTheMissileCollider;
+    [SerializeField] float maxThrustSpeed = 20f;
+    public bool allowRotation = false;
 
     enum State {Alive, Exploding, Winning};
     State state = State.Alive;
@@ -33,8 +35,16 @@ public class Missile : MonoBehaviour
     void Update()
     {
         RespondToInput();
+        if (rigidBody.velocity.magnitude > maxThrustSpeed)
+        {
+            rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxThrustSpeed);
+        }
     }
 
+    public void AllowRotation()
+    {
+        allowRotation = true;
+    }
     private void RespondToInput()
     {
         if (state == State.Alive)
@@ -53,6 +63,14 @@ public class Missile : MonoBehaviour
             audioSource.Stop();
             thrustParticle.Stop();
         }
+        if (allowRotation == true)
+        {
+            Rotate();
+        }
+    }
+
+    private void Rotate()
+    {
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward, rotationForce * Time.deltaTime);
@@ -65,7 +83,7 @@ public class Missile : MonoBehaviour
 
     private void Thrust()
     {
-        rigidBody.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime); 
+        rigidBody.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(thrustSound);
@@ -92,8 +110,8 @@ public class Missile : MonoBehaviour
     private void Explode()
     {
         state = State.Exploding;
-        baseOfTheMissile.enabled = false;
-        coneOfTheMissile.enabled = false;
+        bodyOfTheMissileRenderer.enabled = false;
+        bodyOfTheMissileCollider.enabled = false;
         audioSource.Stop();
         audioSource.PlayOneShot(explodeSound);
         thrustParticle.Stop();

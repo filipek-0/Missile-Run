@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2472333690855300147}
   - component: {fileID: 864905778428336330}
   - component: {fileID: 184156731309282956}
+  - component: {fileID: 9176391023164761069}
   m_Layer: 0
   m_Name: Missile (0)
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2878794842596928354}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 4.464624, y: 0, z: 0}
-  m_LocalScale: {x: 0.4345241, y: 0.4345241, z: 0.4345241}
+  m_LocalScale: {x: 0.4345241, y: 0.43452412, z: 0.21726206}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +83,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9176391023164761069
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878794842596928354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8295813190156428594, guid: 557306d011bb25847a72d65f95048288, type: 3}

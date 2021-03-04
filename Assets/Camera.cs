@@ -9,7 +9,7 @@ public class Camera : MonoBehaviour
     [SerializeField] Vector3 offsetValue;
     [SerializeField] Vector3 offset;
 
-    [SerializeField] MeshRenderer baseOfTheMissile;
+    [SerializeField] MeshRenderer bodyOfTheMissile;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-        if(baseOfTheMissile.enabled == true)
+        if(bodyOfTheMissile.enabled == true)
         {
             transform.position = missile.position + offset;
             transform.LookAt(missile);
@@ -42,7 +42,6 @@ public class Camera : MonoBehaviour
             Vector3 offsetConstant = new Vector3();
             offsetConstant.z = -centerOftheScene.x;
             mapOffset = offsetConstant + offsetValue;
-            print(mapOffset);
             transform.position = centerOftheScene + mapOffset;
             transform.LookAt(centerOftheScene);
         }

@@ -57,8 +57,9 @@
   <ItemGroup>
     <Compile Include="Assets\Camera.cs" />
     <Compile Include="Assets\MetroMovement.cs" />
-    <Compile Include="Assets\Missile.cs" />
     <Compile Include="Assets\Trigger.cs" />
+    <Compile Include="Assets\Missile.cs" />
+    <Compile Include="Assets\TriggerRotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
