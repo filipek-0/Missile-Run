@@ -830,6 +830,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2045821822}
     m_Modifications:
+    - target: {fileID: 723762661100266387, guid: 8fed810f5b9d0d14e83bb78c718ee380, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 995528408579023064, guid: 8fed810f5b9d0d14e83bb78c718ee380, type: 3}
       propertyPath: m_Name
       value: Tube 1 dead end

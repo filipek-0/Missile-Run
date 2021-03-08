@@ -2468,7 +2468,7 @@ PrefabInstance:
     - target: {fileID: 1691979741, guid: c62b4086bdeef1848b6a72cf7d988418, type: 3}
       propertyPath: endOfTheScene
       value: 
-      objectReference: {fileID: 1784524970}
+      objectReference: {fileID: 1006766791}
     - target: {fileID: 1691979741, guid: c62b4086bdeef1848b6a72cf7d988418, type: 3}
       propertyPath: bodyOfTheMissile
       value: 
