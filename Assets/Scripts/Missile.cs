@@ -84,11 +84,14 @@ public class Missile : MonoBehaviour
     private void Thrust()
     {
         rigidBody.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
-        if (!audioSource.isPlaying)
+        if (PauseMenu.gameIsPaused == false)
         {
-            audioSource.PlayOneShot(thrustSound);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(thrustSound);
+            }
+            thrustParticle.Play();
         }
-        thrustParticle.Play();
     }
 
     private void OnCollisionEnter(Collision collision)

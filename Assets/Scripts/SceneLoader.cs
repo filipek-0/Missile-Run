@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] GameObject controlsMenu;
+    public void Start()
+    {
+        controlsMenu.SetActive(false);
+    }
     public void LoadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
