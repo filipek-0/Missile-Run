@@ -55,14 +55,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\MetroMovement.cs" />
     <Compile Include="Assets\Scripts\TriggerMetroStop.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\TriggerMetroStart.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\TriggerRotation.cs" />
     <Compile Include="Assets\Scripts\Missile.cs" />
-    <Compile Include="Assets\Scripts\SceneLoader.cs" />
-    <Compile Include="Assets\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Credits.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

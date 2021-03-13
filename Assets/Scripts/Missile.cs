@@ -20,6 +20,7 @@ public class Missile : MonoBehaviour
     [SerializeField] MeshCollider bodyOfTheMissileCollider;
     [SerializeField] float maxThrustSpeed = 20f;
     public bool allowRotation = false;
+    public bool collisionIsOn = true;
 
     enum State {Alive, Exploding, Winning};
     State state = State.Alive;
@@ -50,6 +51,21 @@ public class Missile : MonoBehaviour
         if (state == State.Alive)
         {
             Movement();
+            if (Debug.isDebugBuild)
+            {
+                DebugKeys();
+            }
+        }
+    }
+    private void DebugKeys()
+    {
+        if (Input.GetKey(KeyCode.L))
+        {
+            NextLevel();
+        }
+        else if (Input.GetKey(KeyCode.K))
+        {
+            collisionIsOn = !collisionIsOn;
         }
     }
     private void Movement()
@@ -96,7 +112,7 @@ public class Missile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive) { return; }
+        if (state != State.Alive || collisionIsOn == false) { return; }
         switch (collision.gameObject.tag)
         {
             case "Friendly":
