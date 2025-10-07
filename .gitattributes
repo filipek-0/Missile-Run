@@ -1,0 +1,6 @@
+# Treat Unity YAML/binary files as binary
+*.prefab binary
+*.unity binary
+*.mat binary
+*.asset binary
+*.meta text

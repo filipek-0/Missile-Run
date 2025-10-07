@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\TriggerRotation.cs" />
     <Compile Include="Assets\Scripts\Missile.cs" />
     <Compile Include="Assets\Scripts\Credits.cs" />
+    <Compile Include="Assets\Music.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
